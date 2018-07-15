@@ -1,0 +1,10 @@
+ .good-cart1{
+   border-radius: 8rpx;
+}
+
+
+
+
+.toptipbar{
+  line-height: 46rpx;
+}

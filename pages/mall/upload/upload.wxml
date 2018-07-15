@@ -1,0 +1,31 @@
+<zan-toptips id="zan-toptips" content="{{ content }}" is-show="{{ $zanui.toptips.show }}"/> 
+
+<form class='bg-white' bindsubmit="formSubmit">
+  <view class='display-flex-center-between bg-white padding-10'>
+    <view class='flex-2'>商品名称</view>
+    <view class='flex-8'>
+      <input placeholder='请输入商品名称' type='text' name="name"/>
+    </view>
+  </view>
+  <view class='display-flex-center-between bg-white padding-10'>
+    <view class='flex-2'>出售价格</view>
+    <view class='flex-8'>
+      <input placeholder='请输入商品出售价格' type='text' name="selling_price"/>
+    </view>
+  </view>
+
+  <view class='bg-white border-top-seg padding-v-10 ng-fl' style=''>
+    <view class='padding-h-10'>
+      <textarea class='text-index' maxlength="200"  style='width:100%' placeholder='描述一下宝贝的转手原因、入手渠道和使用感受' name="reason"></textarea>
+    </view>
+    <!--图片列表  -->
+    <view class='margin-t-10 ng-fl-l position-r'  wx:for="{{tempFilePaths }}" wx:key="{{index}}" style='margin-left:37rpx;background-color:#ccc;'>
+      <image src='{{item}}' style='width:200rpx;height:200rpx;' bindtap='preview' data-index="{{index}}"></image>
+      <text class='iconfont icon-removecircle position-a font-ccc' data-index="{{index}}" bindtap='deletePic' style='font-size:50rpx;top:-26rpx;right:-26rpx;'></text>
+    </view>
+    
+    <!--上传按钮  -->
+    <image class='margin-t-10' wx:if="{{tempFilePaths.length < 6}}" src='../../../res/upload.png' style='width:200rpx;height:200rpx;margin-left:37rpx;' bindtap='uploadImg'></image>
+  </view>  
+  <button form-type="submit" class="bottom-btn bg-theme no-radius">提交</button>
+</form>

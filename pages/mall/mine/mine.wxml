@@ -1,0 +1,23 @@
+<view class="menus bg-white ng-fl border-top-seg">
+  <navigator url='../upload/upload' hover-class="none">
+    <view class='ng-fl-l text-c display-flex-center-center-column' style='width:33.33%;height:250rpx' >
+      上传商品
+    </view>
+  </navigator>
+  
+  <view class='ng-fl-l text-c display-flex-center-center-column' style='width:33.33%;height:250rpx' >
+    上传商品
+  </view>
+  <view class='ng-fl-l text-c display-flex-center-center-column' style='width:33.33%;height:250rpx' >
+    上传商品
+  </view>
+  <view class='ng-fl-l text-c display-flex-center-center-column' style='width:33.33%;height:250rpx' >
+    上传商品
+  </view>
+  <view class='ng-fl-l text-c display-flex-center-center-column' style='width:33.33%;height:250rpx' >
+    上传商品
+  </view>
+  <view class='ng-fl-l text-c display-flex-center-center-column' style='width:33.33%;height:250rpx' >
+    上传商品
+  </view>
+</view>

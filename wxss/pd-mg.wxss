@@ -1,0 +1,104 @@
+.padding-5{
+  padding: 10rpx;
+}
+.padding-10{
+  padding: 20rpx;
+}
+.padding-5-10{
+  padding: 10rpx 20rpx;
+}
+.padding-10-15{
+  padding: 10rpx 30rpx;
+}
+.padding-10-20{
+  padding: 20rpx 40rpx;
+}
+
+.padding-15-20{
+  padding: 30rpx 40rpx;
+}
+
+.padding-l-10{
+  padding-left: 10rpx;
+}
+.padding-r-10{
+  padding-right: 10rpx;
+}
+.padding-v-5{
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+}
+.padding-v-10{
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+.padding-v-15{
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+}
+.padding-v-20{
+  padding-top: 40rpx;
+  padding-bottom: 40rpx;
+}
+.padding-h-10{
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+.padding-h-20{
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+}
+.padding-b-0{
+  padding-bottom: 0rpx;
+}
+.padding-b-10{
+  padding-bottom: 20rpx;
+}
+.margin-r-20{
+  margin-right: 40rpx;
+}
+.margin-r-10{
+  margin-right: 20rpx;
+}
+.margin-r-5{
+  margin-right: 10rpx;
+}
+.margin-t-5{
+  margin-top: 10rpx;
+}
+.margin-t-10{
+  margin-top: 20rpx;
+}
+.margin-t-20{
+  margin-top: 40rpx;
+}
+.margin-t-30{
+  margin-top: 60rpx;
+}
+.margin-l-20{
+  margin-left: 40rpx;
+}
+.margin-l-10{
+  margin-left: 20rpx;
+}
+.margin-l-5{
+  margin-left: 10rpx;
+}
+
+.margin-b-10{
+  margin-bottom: 20rpx;
+}
+.margin-b-5{
+  margin-bottom: 10rpx;
+}
+.margin-b-10{
+  margin-bottom: 20rpx;
+}
+.margin-h-10{
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+.margin-h-15{
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}

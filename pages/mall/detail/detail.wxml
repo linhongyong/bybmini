@@ -1,0 +1,16 @@
+<!--  -->
+<swiper class='swiper' autoplay="true" indicator-dots style='height:750rpx'>
+  <swiper-item wx:for="{{ good.carousel_imgs }}" wx:key="{{item}}">
+    <image class='ng-fill' src="{{ item }}" mode="aspectFit" />
+  </swiper-item>
+</swiper>
+
+<!--商品简卡  -->
+<view class='bg-white margin-t-10 padding-10-20 border-bottom-seg'>
+  <view class='font-bond ng-textAuto1'>
+    <view class=' font-18'>{{ good.name }}</view>
+  </view>
+  <view class='margin-t-10'>
+    <text class='font-theme font-18'>￥{{good.selling_price}}</text>
+  </view>
+</view>

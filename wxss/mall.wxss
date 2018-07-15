@@ -1,0 +1,98 @@
+/*模板  template.wxml*/
+.good-name1{
+  word-break:break-all;display:-webkit-box; -webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+  font-size: 32rpx;
+  height: 72rpx;
+  line-height: 36rpx;
+}
+.price1{
+  font-size:36rpx;  
+  line-height: 36rpx; 
+}
+.spec-str1{
+  color: #ccc;
+}
+.good-img1{/* 购物车、订单 */
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 9rpx;
+}
+/* .good-img2{
+  width: 180rpx;
+  height: 180rpx;
+} */
+
+/*首页  */
+ .two-column-list1{
+  display: flex;
+  justify-content: space-between;  
+  flex-wrap:wrap;
+  box-sizing: content-box;
+  /* padding: 20rpx 36rpx 20rpx; */
+  padding: 0rpx 15rpx 0rpx;
+}
+.two-column-list1 .item{
+  /* width: 357rpx; */
+  background-color: white;
+  margin-top: 8rpx;
+  border-radius: 8rpx;
+} 
+
+/*一级分类  */
+ /* .two-column-list1{
+  display: flex;
+  justify-content: space-between;  
+  flex-wrap:wrap;
+  box-sizing: content-box;
+  padding: 0rpx 15rpx 0rpx;
+}
+.two-column-list1 .item{
+  width: 357rpx;
+  background-color: white;
+  margin-top: 8rpx;
+  border-radius: 8rpx;
+}  */
+
+
+/*分类页-商品列表页2  */
+ .two-column-list2{
+  display: flex;
+  justify-content: space-between;  
+  flex-wrap:wrap;
+  box-sizing: content-box;
+  padding: 20rpx 36rpx 20rpx; 
+}
+.two-column-list2 .item{
+  width: 320rpx;
+  background-color: white;
+  margin-top: 14rpx;
+  margin-bottom: 20rpx;
+} 
+
+.s-1{
+  border-top-right-radius: 10rpx;
+  border-top-left-radius: 10rpx;
+}
+.s-2{
+  border-bottom-right-radius: 10rpx;
+  border-bottom-left-radius: 10rpx;
+}
+
+
+
+.search-word .item{
+  line-height: 60rpx;
+  padding: 0 20rpx;
+  min-width: 110rpx;
+  border-radius: 35rpx;
+  margin-right: 20rpx;
+  text-align: center;
+  background-color: #ededed;
+  color: #000;
+}
+
+/*分页  */
+.has-no-more{
+  padding-top:40rpx;
+  padding-bottom: 20rpx;
+}

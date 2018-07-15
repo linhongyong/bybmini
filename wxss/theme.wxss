@@ -1,0 +1,38 @@
+/*分类页类别选中样式  */
+.nav_left .nav_left_items.active::before{ 
+  background-color: #FF6C5F;
+}
+/*一级分类  */
+.nav_right .order .active::after{
+    border-bottom: 3rpx solid #FF6C5F;
+}
+/*二级分类页  */
+.scroll_box .active::after{
+  border-bottom: 5rpx solid #FF6C5F;
+}
+
+/*二级分类页 \ 详情页 */
+.active::after{
+  border-bottom: 10rpx solid #FF6C5F;
+}
+/*首页类别  */
+.img-border{
+  border: 5rpx solid #FF6C5F;
+}
+/*订单类型  */
+.nav .active::after{
+    border-bottom: 5rpx solid #FF6C5F;
+    
+}
+.font-theme{
+  color: #FF6C5F!important;
+}
+.border-theme{
+  border: 1px solid #FF6C5F;
+}
+.border-theme{
+  border: 1px solid #FF6C5F!important;
+}
+.bg-theme{
+  background-color: #FF6C5F;
+}

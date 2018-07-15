@@ -1,6 +1,16 @@
 {
   "pages":[
-    "pages/index/index",
+    "pages/mall/upload/upload",
+    "pages/mall/mine/mine",
+    "pages/mine/index/index",
+    "pages/mall/index/index",
+    "pages/index/index/index",
+    
+    
+    "pages/other/index/index",
+    
+    "pages/share/index/index",
+    "pages/mall/detail/detail",
     "pages/logs/logs"
   ],
   "window":{
@@ -8,5 +18,42 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "backgroundColor": "#ffffff",
+    "color": "#4d4d4d",
+    "selectedColor": "#FF6E64",
+    "list": [
+      {
+        "pagePath": "pages/index/index/index",
+        "iconPath": "res/001.png",
+        "selectedIconPath": "res/002.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/mall/index/index",
+        "iconPath": "res/003.png",
+        "selectedIconPath": "res/004.png",
+        "text": "商城"
+      },
+      {
+        "pagePath": "pages/share/index/index",
+        "iconPath": "res/005.png",
+        "selectedIconPath": "res/006.png",
+        "text": "分享"
+      },
+      {
+        "pagePath": "pages/other/index/index",
+        "iconPath": "res/009.png",
+        "selectedIconPath": "res/0010.png",
+        "text": "其他"
+      },
+      {
+        "pagePath": "pages/mine/index/index",
+        "iconPath": "res/007.png",
+        "selectedIconPath": "res/008.png",
+        "text": "中心"
+      }
+    ]
   }
 }
