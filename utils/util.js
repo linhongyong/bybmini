@@ -37,7 +37,7 @@ function getDataByAjax(obj, method) {
   }
 }
 
-function wxRequest(obj, time13, start, method) {
+function wxRequest(obj, time13, start) {
   var sign = encrypt(JSON.stringify({
     app_type: 'wechat-site',
     version: 1,
@@ -47,7 +47,7 @@ function wxRequest(obj, time13, start, method) {
   wx.request({
     url: website + obj.url,
     data: obj.data,
-    method: !!method ? method : "Get",
+    method: !!obj.method ? obj.method : "Get",
     header: {
       token: wx.getStorageSync("token"),
       sign,

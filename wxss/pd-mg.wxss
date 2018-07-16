@@ -48,6 +48,9 @@
   padding-left: 40rpx;
   padding-right: 40rpx;
 }
+.padding-t-10{
+  padding-top: 20rpx;
+}
 .padding-b-0{
   padding-bottom: 0rpx;
 }

@@ -79,8 +79,9 @@ Page({
           url: util.website + '/api/mall/upload/img',
           filePath: that.data.tempFilePaths[i],
           name: 'file',
+          header:{"Content-Type": "multipart/form-data"},
           formData: {
-            user_id: wx.getStorageSync("userId"),
+            user_id: 22,
           },
           success: function (res) {
             console.log(res);

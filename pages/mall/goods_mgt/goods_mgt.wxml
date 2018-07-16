@@ -1,0 +1,11 @@
+<view class='bg-white padding-h-10'>
+  <view class='display-flex-center-between bottom-line padding-v-10' wx:for="{{ goods }}" wx:key="{{index}}">
+    <view><image src="{{ item.img }}" style='width: 180rpx;height: 180rpx;border-radius: 9rpx;'></image></view> 
+    <view class='padding-h-10' style='width: 400rpx;'>{{ item.name }}</view>
+    <view class='text-c' style='width: 130rpx;'>
+      <view>编辑</view>
+      <view class='margin-t-5'>下架</view>
+      <view class='margin-t-5'>删除</view>
+    </view>
+  </view>
+</view>
