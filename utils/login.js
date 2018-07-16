@@ -7,14 +7,13 @@ var app = getApp();
 function getUserInfo() {
   var time13, userInfo, code;
   wxGetUserInfo()
-  .then(res => {
-    userInfo = res;
+    .then(res => {
+      userInfo = res;
     return wxLogin();
   })
-  .then(res => {
-    // time13 = res;
-    userInfo.code = code;
-    loginApi(userInfo);
+    .then(res => {
+      userInfo.code = res;
+      loginApi(userInfo);
   })
 }
 function wxGetUserInfo() {
@@ -65,6 +64,7 @@ function getTime13() {
   })
 }
 function loginApi(userInfo) {
+  console.log(userInfo);
   // var sign = util.encrypt(JSON.stringify({
   //   app_type: 'wechat-site',
   //   version: 1,
@@ -85,7 +85,7 @@ function loginApi(userInfo) {
     method: 'POST',
     header: {},
     success: function (res) {
-      // console.log(res);
+      console.log(res);
       // app.globalData.userId = res.data.data.user_id;
       // app.globalData.referenceInfo = res.data.data.user_refer;
       // wx.setStorageSync("token", res.data.data.token);

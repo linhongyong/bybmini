@@ -78,8 +78,7 @@ Page({
         wx.uploadFile({
           url: util.website + '/api/mall/upload/img',
           filePath: that.data.tempFilePaths[i],
-          name: 'file',
-          header:{"Content-Type": "multipart/form-data"},
+          name: 'img',
           formData: {
             user_id: 22,
           },

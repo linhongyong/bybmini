@@ -9,7 +9,7 @@
       <view class='good-name'>{{name}}</view>
     </navigator>
     <view class='display-flex-center-between margin-t-5'>
-      <view class='font-18 font-theme'>￥{{ selling_price }}</view>
+      <view class='font-18 font-theme'>￥{{ price_selling }}</view>
     </view>
   </view>
 </template>
