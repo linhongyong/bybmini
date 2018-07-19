@@ -51,6 +51,9 @@
 .padding-t-10{
   padding-top: 20rpx;
 }
+.padding-t-20{
+  padding-top: 40rpx;
+}
 .padding-b-0{
   padding-bottom: 0rpx;
 }

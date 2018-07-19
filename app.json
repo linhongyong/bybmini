@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/mall/index/index",
     "pages/mall/upload/upload",
+    "pages/mall/index/index",
     "pages/mall/goods_mgt/goods_mgt",
     "pages/mall/mine/mine",
     

@@ -1,8 +1,8 @@
 .border-top-seg{
-  border-top: 16rpx solid #eee;
+  border-top: 16rpx solid #F4F5F9;
 }
 .border-bottom-seg{
-  border-bottom: 16rpx solid #eee;
+  border-bottom: 16rpx solid #F4F5F9;
 }
 .bottom-line{
  border-bottom: 1px solid #efefef;

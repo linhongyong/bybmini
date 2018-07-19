@@ -67,10 +67,10 @@ Page({
     let that = this;
     console.log(e.detail.value);
     let valueObj = e.detail.value;
-    if (valueObj.name.trim() == "" || valueObj.selling_price.trim() == "" || valueObj.reason.trim() == "") {
-      Toptips("商品信息不完整");
-      return;
-    }
+    // if (valueObj.name.trim() == "" || valueObj.selling_price.trim() == "" || valueObj.reason.trim() == "") {
+    //   Toptips("商品信息不完整");
+    //   return;
+    // }
     // 上传图片
     var promiseArr = [];
     for (let i = 0; i < that.data.tempFilePaths.length; i++) {
@@ -86,7 +86,7 @@ Page({
             console.log(res);
             var data = JSON.parse(res.data);
             that.setData({
-              imgs: that.data.imgs.concat([data.data])
+              imgs: that.data.imgs.concat(data.data.path)
             })
             resolve();
           },
@@ -109,28 +109,16 @@ Page({
   ajaxFunc: function () {
     let that = this;
     util.getDataByAjax({
-      url: "comment/save",
+      url: '/api/mall/upload/good',
+      method: "Post",
       data: {
-        param: util.encrypt(JSON.stringify({
-          user_id: wx.getStorageSync('userId'),
-          comment_id: that.data.comment_id,
-          comment_img: that.data.imgs,
-          content: that.data.content,
-          point: that.data.start,
-        }))
+        user_id: 42,
+        name: "棉袄2",
+        price_selling: 1020,
+        imgs: that.data.imgs.join(","),
+        note: "不想要了不22222想要了不想要了不想要了不想要了不想要了",
       },
       success: function (data) {
-        Toptips({
-          duration: 1000,
-          content: "评价完成",
-          backgroundColor: "#06A940"
-        })
-        setTimeout(function () {
-          wx.redirectTo({
-            url: '../order/order?type=4',
-          })
-        }, 2000)
-
       },
       error: function () {
         console.log("error");

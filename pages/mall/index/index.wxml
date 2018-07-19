@@ -12,7 +12,7 @@
   </view>
 </view> 
 <!--分类  -->
-<view class='scroll_box padding-v-10 bg-white'>
+<view class='scroll_box bg-white'>
   <scroll-view scroll-x style="" bindscroll="scroll">
     <view class='menus display-ib padding-10-20' wx:for="{{categorys}}" wx:key="{{index}}">
       <view class='menu-item'>
@@ -30,8 +30,21 @@
   </swiper-item>
 </swiper>
 
+<!--租赁  -->
+<view class='padding-h-20 padding-t-10 font-18 bg-white font-bold'>租赁更时尚</view>
+<view class='scroll_box bg-white'>
+  <scroll-view scroll-x style="" bindscroll="scroll">
+    <view class='menus display-ib padding-10-20' wx:for="{{categorys}}" wx:key="{{index}}">
+      <view class='menu-item'>
+        <image class='ng-fill' src='{{ item.img }}' mode=''></image>
+      </view>
+      <view class='font-13'>{{ item.name }}</view>
+    </view>
+  </scroll-view>
+</view>
+
 <!--热门推荐  -->
-<view class='padding-10-20 font-20 bg-white'>热门推荐</view>
+<view class='padding-10-20 font-18 bg-white font-bold margin-t-10'>热门推荐</view>
 <view class='two-column-list bg-white'>
   <view class='item' wx:for="{{ goods }}" wx:key="{{item}}">
     <template is="mall_good_card" data="{{...item}}"/>
