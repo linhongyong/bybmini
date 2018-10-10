@@ -112,7 +112,7 @@ Page({
       url: '/api/mall/upload/good',
       method: "Post",
       data: {
-        user_id: 42,
+        userId: wx.getStorageSync("userId"),
         name: "棉袄2",
         price_selling: 1020,
         imgs: that.data.imgs.join(","),

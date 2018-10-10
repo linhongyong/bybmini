@@ -1,6 +1,45 @@
-<navigator url='../mall/index/index'>
+<import src="../../../wxml/essayList_life_tpl.wxml" />
+<import src="../../../wxml/noMore_tpl.wxml" />
+<zan-dialog id="zan-button-dialog" bindgetuserinfo="getuserinfo"></zan-dialog>
+<zan-toptips id="zan-toptips" content="{{ content }}" is-show="{{ $zanui.toptips.show }}" />
+<wxs src="../../../wxs/tools.wxs" module="tools" />
+
+
+
+ <swiper class='swiper bg-white' style='height:365rpx' autoplay="true" indicator-dots indicator-color="#ccc" indicator-active-color="#fff">
+  <swiper-item wx:for="{{ banners }}" wx:key="{{index}}">
+    <image src="{{ item.img_url }}" bindtap='imghref' data-index="{{index}}" class="slide-image" style="width:100%; height:100%" mode="aspectFill" />
+  </swiper-item>
+</swiper> 
+
+<!-- <view class='menus ng-fl bg-white padding-b-10'>
+  <view class='ng-fl-l' wx:for="{{ navs }}" style='width:150rpx; margin-top:20rpx;'>
+    <navigator url='{{ item.url }}' hover-class='none'>
+      <view class='menu-item'>
+        <image class='ng-fill' src='{{ item.img }}' mode=''></image>
+      </view>
+      <view class='margin-t-5 font-13 text-c'>{{ item.name }}</view>
+    </navigator>
+  </view>
+</view> -->
+
+<navigator url='../../find/life_edit/life_edit'>
+  <view class='padding-v-10 bg-white top-line display-flex-center-center'  wx:if="{{navs.length > 0}}">
+    <text class='font-16 margin-r-10'>我要发布</text>
+    <image src='http://120.78.179.176:3001/icon/up.png' style='width:60rpx;height:60rpx;'></image>
+  </view>
+</navigator>
+
+<view class='padding-h-10 bg-white top-line'>
+  <template is="lifeListTemplate" data="{{list}}"/>
+</view>
+
+ <zan-loading type="spinner" color="black" wx:if="{{ bottomLoading }}" size="20"></zan-loading>
+ <template is="hasNoMoreTemplate" data="{{hasMore, list}}"/>
+
+<!-- <navigator url='../mall/index/index'>
   <view class='padding-v-20 text-c border-top-seg bg-white font-24'>
-    学姐学长百家商城
+    高教园区租赁市场
   </view>
 </navigator>
 
@@ -31,5 +70,4 @@
   <view class='padding-v-20 text-c border-top-seg bg-white font-24'>
     高教园区活动推送（有趣好玩高逼格）
   </view>
-</navigator>
-
+</navigator> -->

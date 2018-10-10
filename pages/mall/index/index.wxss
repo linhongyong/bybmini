@@ -1,11 +1,22 @@
+page{
+  background-color: white;
+}
 /*分类*/
 .menus .menu-item{
-  width: 110rpx;
-  height: 110rpx;
+  width: 170rpx;
+  height: 170rpx;
   margin: 0 auto;
+  text-align: center;
+}
+.menus1  .menu-item{
+  width: 150rpx;
+  height: 150rpx;
+  /* margin: 0 auto; */
   padding: 20rpx;
   border: 1px solid #ccc;
-  border-radius: 55rpx;
-  margin-bottom: 10rpx;
+  border-radius: 75rpx;
   text-align: center;
+}
+.menus1 .menu-item{
+  box-shadow: #ddd 0rpx 0rpx 30rpx 4rpx;
 }

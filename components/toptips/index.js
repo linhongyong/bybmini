@@ -61,16 +61,13 @@ function Toptips(options = {}) {
   };
 
   options = Object.assign(defaultOptions, parseParam(options));
-  console.log(options);
-  // console.log(ctx);
+  // console.log(options);
   const $toptips = ctx.selectComponent(options.selector);
-  // console.log($toptips);
   // delete options.selector;
   if ( !$toptips ){ return; }
   $toptips.setData({
     ...options
   });
-  console.log($toptips.properties.backgroundColor);
   
   $toptips && $toptips.show();
 }

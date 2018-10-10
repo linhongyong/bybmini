@@ -1,0 +1,17 @@
+page{
+  background-color: white;
+}
+.menus{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.menus .menu-item{
+  width: 110rpx;
+  height: 110rpx;
+  margin: 0 auto;
+  padding: 20rpx;
+  border: 1px solid #ccc;
+  border-radius: 55rpx;
+  text-align: center;
+}

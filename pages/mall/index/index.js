@@ -7,10 +7,12 @@ Page({
 
 
   data: {
+    page: 1,
+    hasMore: 1,
+    bottomLoading: false
   },
   onLoad: function (options) {
     this.getBanners(this.getCategorys(this.getGoods()));//this.getCategorys(this.getGoods())
-
     if (!util.isAuthorize()) {
       return;
     } else {
@@ -27,7 +29,18 @@ Page({
   onHide: function () { },
   onUnload: function () { },
   onPullDownRefresh: function () { },
-  onReachBottom: function () { },
+  onReachBottom: function () {
+    var that = this;
+    console.log(this.data.hasMore == 0, !!this.data.bottomLoading, this.data.page);
+    //没有了、还在请求、第一页
+    if (!!(this.data.hasMore == 0 || this.data.bottomLoading || this.data.page == 1)) {
+      return;
+    }
+    this.setData({
+      bottomLoading: true,
+    })
+    this.getGoods();
+   },
   onShareAppMessage: function () { },
 
 
@@ -51,6 +64,8 @@ Page({
     let that = this;
     util.getDataByAjax({
       url: "/api/mall/index/categorys",
+      data:{
+      },
       success: function (res) {
         that.setData({
           categorys: res.categorys
@@ -65,10 +80,24 @@ Page({
   getGoods: function () {
     let that = this;
     util.getDataByAjax({
-      url: "/api/mall/index/goods",
-      success: function (res) {
+      url: "/api/good/sellgoods/get",
+      data:{
+        page: that.data.page,
+        size: 5,
+      },
+      success: function (data) {
+
+        for (let i = 0, len = data.list.length; i < len; i++) {
+          data.list[i].create_time = util.releaseTimeFormat(data.list[i].create_time);
+          data.list[i].buy_date = data.list[i].buy_date.split('T')[0];
+          data.list[i].guarantee_date = data.list[i].guarantee_date.split('T')[0];
+        }
+        let list = that.data.list && that.data.list.concat(data.list) || data.list;
         that.setData({
-          goods: res.goods
+          list: list,
+          hasMore: data.hasMore,
+          page: ++that.data.page,
+          bottomLoading: false
         })
       },
       error: function () {
@@ -76,8 +105,6 @@ Page({
       }
     });
   },
-
-
   //------------------------------------------------------ff3
   getPageContentData: function () {//登录后才能获取的数据写在这里
 

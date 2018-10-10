@@ -19,3 +19,17 @@
 .usermotto {
   margin-top: 200px;
 }
+
+
+.menus{
+  z-index: 999;
+}
+.menus .menu-item{
+  width: 110rpx;
+  height: 110rpx;
+  margin: 0 auto;
+  padding: 20rpx;
+  border: 1px solid #ccc;
+  border-radius: 55rpx;
+  text-align: center;
+}

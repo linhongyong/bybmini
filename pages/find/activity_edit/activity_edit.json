@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "zan-toast": "../../../components/toast/index",
+    "ng-edit": "../../../components/edit/index"
+  }
+}

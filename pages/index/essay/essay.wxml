@@ -1,0 +1,71 @@
+<import src="../edit/editTemplate.wxml" />
+<wxs src="../../../wxs/tools.wxs" module="tools" />
+<zan-toast id="zan-toast"></zan-toast>
+
+<!--文章  -->
+<view class='padding-h-10 bg-white'>
+  <!--头部  -->
+  <view class='padding-t-10 font-bold font-24 ng-textAuto3'>{{ essay.title }}</view>
+  <view class='bottom-line padding-v-10 display-flex-center-between margin-t-10' wx:if="{{ essay.id }}">
+    <view class='display-flex-center font-14'>
+      <image class='' src='{{essay.avatar_url}}' style='width:50rpx;height:50rpx;border-radius:25rpx;'></image>
+      <text class='margin-l-10'>{{ essay.nick_name }}</text>
+    </view>
+    <text class='font-666 font-14 font-italic'>2小时前</text>
+  </view>
+  <!--内容  -->
+  <view class='padding-t-10 font-4d'>
+     <template is="nodesTemplate" data="{{nodes}}"/>
+  </view>
+  <!--结尾  -->
+  <view class='padding-v-10 padding-l-5 bottom-line' wx:if="{{ essay.id }}">
+    <text class='iconfont icon-view-num margin-r-5'>
+      <text class='margin-l-5'>{{ essay.view }}</text>
+    </text>
+    <text class='iconfont icon-good margin-l-10 {{essay.is_zan ? "font-theme":""}}' bindtap='updateZan'>
+      <text class='margin-l-5'>{{ essay.zan }}</text>
+    </text> 
+  </view>
+</view>
+
+<!--评论  -->
+<view class='padding-t-5 bg-white'>
+  <view class='padding-v-5' wx:for="{{ comments }}" wx:key="{{index}}">
+    <view class='ng-fl'>
+      <view class='ng-fl-l text-c' style='width:16%'>
+        <image class='' src='{{item.avatar_url}}' style='width:70rpx;height:70rpx;border-radius:35rpx;'></image>
+      </view>
+      <view class='ng-fl-r' style='width:84%'>
+        <view class='font-16'><text>{{ item.nick_name }}</text></view>
+        <view class='padding-v-5 font-17'>{{ item.content }}</view>
+        <view class='font-14 font-ccc'>
+         {{ item.create_time }}
+        </view>
+
+      </view>
+    </view>
+  </view>
+</view>
+
+<!--页面底部  -->
+<view style='height:120rpx;'></view>
+<view class='position-f padding-10 bg-f4 display-flex-center-between' style='bottom:0;left:0;z-index:999;width:100%'>
+  <textarea fixed="true" value="{{comment}}" cursor-spacing="10" class='bg-white padding-10' placeholder='说点什么吧~' auto-height style='width:550rpx;border-radius:5px' bindinput="setComment"></textarea>
+  <button class='font-theme font-14' style='width:100rpx;padding:10rpx 0;margin-left:0;margin-right:0;line-height:2;' 
+ bindtap='submitComment'>提交</button>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

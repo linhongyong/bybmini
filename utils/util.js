@@ -4,7 +4,8 @@ var Toptips = require('../components/toptips/toptips.js');
 //项目配置ff**********************************************************************************************************
 const appName = '高教园区';
 var website = "https://www.easy-mock.com/mock/5b401e19f38b6529a0d57289/byb";
-var website = "http://www.therethey.com:3001";
+var website = "http://www.therethey.com";
+var website = "http://localhost:3000";
 const logo = 'logo.png';
 
 //请求函数封装ff********************************************************************************************************
@@ -13,7 +14,17 @@ const logo = 'logo.png';
  * obj 请求参数封装
  * method 请求方法 如get、post
  */
+let isRequesting = false;
 function getDataByAjax(obj, method) {
+  // 重复提交拦截
+  if (obj.preventSubmits){
+    if (isRequesting){
+      return;
+    }else{
+      isRequesting = true;
+    }
+    
+  }
   let start;
   // 判断是否授权
   if (obj.isAuthorize && !isAuthorize()) {
@@ -56,6 +67,7 @@ function wxRequest(obj, time13, start) {
       apptype: 'wechat-site',
     },
     success: function (res) {
+      isRequesting = false;
       console.log(obj.url+"************************************");
       console.log(res.data.data);
       if (!!obj.isShowLaoding) {
@@ -120,7 +132,7 @@ function getTime13() {
  * 判断是否授权，没有则调用page()中的showAuthorizeDialog
  * return 是否授权
  */
-function isAuthorize() {//返回true未授权
+function isAuthorize() {//
   if (!isDataCommon(wx.getStorageSync("isAuthorize"))) {
     const pages = getCurrentPages();
     const ctx = pages[pages.length - 1];
@@ -128,6 +140,41 @@ function isAuthorize() {//返回true未授权
     return false;
   }
   return true;
+}
+//上传图片到服务器**************************************************************************************************
+let uploadedImgs;
+function uploadImgPromise(url){
+  let promise = new Promise((resolve, reject) => {
+    wx.uploadFile({
+      url: website + '/api/mall/upload/img',
+      filePath: url,
+      name: 'img',
+      formData: {},
+      success: function (res) {
+        var data = JSON.parse(res.data);
+        uploadedImgs.push(data.data.path);
+        resolve();
+      },
+      fail: function (err) {
+        Toptips({
+          content: "图片上传失败",
+        })
+      }
+    })
+  })
+  return promise;
+}
+
+function uploadImgPromises(imgs, callback){
+  uploadedImgs = [];
+  var promiseArr = [];
+  var resultArrr = [];
+  for (let i = 0; i < imgs.length; i++) {
+    promiseArr.push(uploadImgPromise(imgs[i]));
+  }
+  Promise.all(promiseArr).then(() => {
+    callback && callback(uploadedImgs);
+  });
 }
 
 //加解密ff**********************************************************************************************************
@@ -188,6 +235,29 @@ function isDataCommon(data) {
   }
   console.log(data);
 }
+//格式化数据库时间********************************************************************************************
+function releaseTimeFormat(date){
+  let date2 = new Date(date);
+  let date1 = new Date();
+  let minutes = parseInt((date1 - date2) / 1000);
+  let seconds = parseInt(minutes / 60);
+  let hours = parseInt(seconds / 60);;
+  let days = parseInt(hours / 24);
+  // console.log(date2, date1,minutes, seconds, hours, days);
+  if (seconds == 0) {
+    return `刚刚`;
+  }
+  if (seconds < 60){
+    return `${seconds}分钟前`;
+  }
+  if (hours < 24) {
+    return `${hours}小时前`;
+  }
+  if (days > 0){
+    return `${days}天前`;
+  }
+}
+
 
 /**
  * date 应该是时间撮
@@ -215,10 +285,13 @@ module.exports = {
   formatTime: formatTime,
   getDataByAjax: getDataByAjax,
   getDataByAjax: getDataByAjax,
+  uploadImgPromise,//图片上传
+  uploadImgPromises,//图片上传
   decrypt: decrypt,
   encrypt: encrypt,
   isDataCommon,//判断参数是否可用
   isAuthorize,
   website,
-  logo
+  logo,
+  releaseTimeFormat
 }

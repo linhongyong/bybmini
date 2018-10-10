@@ -1,0 +1,11 @@
+<view>
+  <block wx:for="{{navs}}" wx:key="{{index}}">
+    <navigator url='{{ item.url }}'>
+      <view class='margin-t-20 padding-h-20 bg-white display-flex-center'>
+        <image src='{{ item.img }}' style='width:100rpx;height:100rpx'></image>
+        <text class='margin-l-15'>{{item.name}}</text>
+      </view>
+    </navigator>
+  </block>
+  <view style='height:40rpx'></view>
+</view>

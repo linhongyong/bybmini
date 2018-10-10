@@ -2,10 +2,12 @@
 
 page{
   background-color: #F4F5F9;
+  font-family: '微软雅黑'
 }
 view, image{
    box-sizing: border-box;
-   font-size: 28rpx;
+   font-size: 34rpx;
+   line-height: 44rpx;
 }
 view{
   /* background-color: white; */
@@ -94,12 +96,7 @@ view{
   line-height: 80rpx;
   text-align: center;
 }
-.position-r{
-  position: relative;
-}
-.position-a{
-  position: absolute;
-}
+
 .no-radius{
   border-radius: 0rpx;
 }
@@ -176,8 +173,6 @@ button.form_button::after{
 }
 
 @import "wxss/zan-index.wxss";
-@import "wxss/mall.wxss";
-@import "wxss/mall-wesp.wxss";
 
 @import "wxss/pd-mg.wxss";
 @import "wxss/display.wxss";
@@ -185,5 +180,3 @@ button.form_button::after{
 @import "wxss/icon.wxss";
 @import "wxss/border.wxss";
 @import "wxss/theme.wxss";
-
-@import "wxml/tpl.wxss";

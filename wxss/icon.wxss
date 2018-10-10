@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'iconfont';  /* project id 737757 */
-  src: url('//at.alicdn.com/t/font_737757_65zvdkpv0sl.eot');
-  src: url('//at.alicdn.com/t/font_737757_65zvdkpv0sl.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_737757_65zvdkpv0sl.woff') format('woff'),
-  url('//at.alicdn.com/t/font_737757_65zvdkpv0sl.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_737757_65zvdkpv0sl.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_737757_57tn9kfns3x.eot');
+  src: url('//at.alicdn.com/t/font_737757_57tn9kfns3x.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_737757_57tn9kfns3x.woff') format('woff'),
+  url('//at.alicdn.com/t/font_737757_57tn9kfns3x.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_737757_57tn9kfns3x.svg#iconfont') format('svg');
 }
 .iconfont {
   font-family:"iconfont" !important;
@@ -17,3 +17,11 @@
 .icon-search:before { content: "\e721"; }
 .icon-cart:before { content: "\e616"; }
 .icon-removecircle:before { content: "\e66b"; }
+.icon-tubiao_diancai:before { content: "\e610"; }
+.icon-good:before { content: "\e60f"; }
+.icon-favorite:before { content: "\e626"; }
+.icon-view-num:before { content: "\e665"; }
+.icon-tupian:before { content: "\e652"; }
+.icon-removecircle:before { content: "\e66b"; }
+
+.icon-gantanhao:before { content: "\e629"; }

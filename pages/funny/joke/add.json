@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "zan-toptips": "../../../components/toptips/index"
+  }
+}

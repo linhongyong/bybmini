@@ -1,0 +1,13 @@
+<zan-toptips id="zan-toptips" content="{{ content }}" is-show="{{ $zanui.toptips.show }}"/> 
+
+<view class="padding-10 bg-white">
+  <form bindsubmit='bindFormSubmit'>
+    <view></view>
+    <view>
+      <textarea placeholder='请输入段子内容。' maxlength="" name="content"></textarea>
+    </view>
+    <button class='bg-theme font-white' form-type='submit'>发布</button>
+  </form>
+</view>
+
+

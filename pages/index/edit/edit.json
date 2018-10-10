@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "ng-edit": "../../../components/edit/index"
+  }
+}

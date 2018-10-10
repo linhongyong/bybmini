@@ -1,0 +1,31 @@
+<import src="../../../wxml/essay_edit_footer_tpl.wxml"/> 
+<zan-toast id="zan-toast"></zan-toast>
+
+<form bindsubmit="formSubmit" >
+
+<!--编辑区  -->
+<view  class='padding-h-10 font-24'  wx:if="{{ !isPreview }}">
+  <picker bindchange="bindPickerChange" class='padding-v-10 bottom-line' value="{{categorysIndex}}" range="{{categorys}}">
+    <view class="picker ng-fl">
+      <text class='ng-fl-l'>选择分类：</text>
+      <text class='ng-fl-r'>{{categorys[categorysIndex]}}</text>
+    </view>
+  </picker>
+  <!--表单部分  -->
+  <view class='bottom-line  padding-v-10'>
+    <input placeholder='标题(选填-20字以内)' maxlength="20" name="title"></input>
+  </view>
+  <!--图文部分  -->
+  <ng-edit id="ng-edit"></ng-edit>
+</view>
+
+<!--预览区  -->
+<view wx:else>
+  <template is="nodesTemplate" data="{{nodes}}"/>
+</view>
+
+<!--底部输入bar  -->
+<template is=essayEditFooterTemplate"/>
+
+
+</form>

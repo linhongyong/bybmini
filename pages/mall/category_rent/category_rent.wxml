@@ -1,0 +1,24 @@
+<import src="../../../wxml/essayList_rentGood_tpl.wxml" />
+<import src="../../../wxml/noMore_tpl.wxml" />
+
+<!--分类  -->
+ <view class="scroll_box bg-white">
+  <scroll-view class='cate-scroll font-666' scroll-x="true" scroll-into-view='{{activeId}}'>
+      <view wx:for="{{categorys}}" 
+      wx:key="item.id" 
+      data-id="{{ item.id }}" 
+      wx:key="{{index}}" 
+      wx:if="{{ item.type == 2}}"
+      class="scroll-item padding-5-10 font-14  {{curNav == item.id ? 'font-theme' : ''}}"  
+      bindtap='updateCategorys'>
+      {{item.name}}
+      </view>
+  </scroll-view>
+</view> 
+
+<view class='padding-h-10 bg-white top-line'>
+ <template is="rentGoodListTemplate" data="{{list}}"/>
+</view>
+
+<zan-loading type="spinner" color="black" wx:if="{{ bottomLoading }}" size="20"></zan-loading>
+<template is="hasNoMoreTemplate" data="{{hasMore, list}}"/>

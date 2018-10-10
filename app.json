@@ -1,20 +1,33 @@
 {
   "pages":[
-    "pages/mall/upload/upload",
+    "pages/index/index/index",
+    "pages/find/life_detail/life_detail",
+    
+    "pages/mine/myshare/myshare",
+    "pages/mine/index/index",
+    "pages/find/life_edit/life_edit",
     "pages/mall/index/index",
+    "pages/mine/mymall/mymall",
+    "pages/mall/detail_rent/detail_rent",
+    "pages/mall/category_rent/category_rent",
+    "pages/mall/edit/edit",
+    "pages/find/activity_edit/activity_edit",
+    "pages/find/activity_detail/activity_detail",
+    "pages/find/activity_list/activity_list",
+    "pages/find/life_list/life_list",
+    "pages/mall/detail/detail",
+    "pages/release/index/index",
+    "pages/find/index/index",
+    "pages/index/essay/essay",
+    "pages/mall/category/category",
+    "pages/more/index/index",
+    "pages/index/edit/edit",
+    "pages/funny/joke/add",
+    "pages/mall/upload/upload",
     "pages/mall/goods_mgt/goods_mgt",
     "pages/mall/mine/mine",
-    
-    
-    "pages/mine/index/index",
-    
-    "pages/index/index/index",
-    
-    
     "pages/other/index/index",
-    
     "pages/share/index/index",
-    "pages/mall/detail/detail",
     "pages/logs/logs"
   ],
   "window":{
@@ -38,25 +51,19 @@
         "pagePath": "pages/mall/index/index",
         "iconPath": "res/003.png",
         "selectedIconPath": "res/004.png",
-        "text": "商城"
+        "text": "买卖"
       },
       {
-        "pagePath": "pages/share/index/index",
-        "iconPath": "res/005.png",
-        "selectedIconPath": "res/006.png",
-        "text": "分享"
-      },
-      {
-        "pagePath": "pages/other/index/index",
+        "pagePath": "pages/find/index/index",
         "iconPath": "res/009.png",
         "selectedIconPath": "res/0010.png",
-        "text": "其他"
+        "text": "发现"
       },
       {
         "pagePath": "pages/mine/index/index",
         "iconPath": "res/007.png",
         "selectedIconPath": "res/008.png",
-        "text": "中心"
+        "text": "我的"
       }
     ]
   }

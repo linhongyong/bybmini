@@ -16,6 +16,7 @@ function getUserInfo() {
       loginApi(userInfo);
   })
 }
+
 function wxGetUserInfo() {
   return new Promise((resolve, reject) => {
     wx.getUserInfo({//获取用户信息
@@ -34,6 +35,7 @@ function wxGetUserInfo() {
     });
   })
 }
+
 function wxLogin() {
   return new Promise((resolve, reject) => {
     wx.login({//小程序登录
@@ -43,6 +45,7 @@ function wxLogin() {
     });
   })
 }
+
 function getTime13() {
   return new Promise((resolve, reject) => {
     wx.request({
@@ -89,7 +92,7 @@ function loginApi(userInfo) {
       // app.globalData.userId = res.data.data.user_id;
       // app.globalData.referenceInfo = res.data.data.user_refer;
       // wx.setStorageSync("token", res.data.data.token);
-      // wx.setStorageSync("userId", res.data.data.user_id);
+      wx.setStorageSync("userId", res.data.data.userId);
       // wx.setStorageSync("agentLayer", res.data.data.agent_layer);
       let pages = getCurrentPages();
       let ctx = pages[pages.length - 1];

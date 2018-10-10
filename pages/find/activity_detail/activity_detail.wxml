@@ -1,0 +1,50 @@
+<!--essay基本组成部分  -->
+<import src="../../../wxml/essay_header_tpl.wxml" />
+<import src="../../../wxml/nodes_tpl.wxml" />
+<import src="../../../wxml/essay_footer_tpl.wxml" />
+<import src="../../../wxml/comment_tpl.wxml" />
+<import src="../../../wxml/noMore_tpl.wxml" />
+<import src="../../../wxml/essay_submitComment_tpl.wxml" />
+
+<zan-toast id="zan-toast"></zan-toast>
+
+<!--文章  -->
+<view class='padding-h-10 bg-white padding-b-10'>
+ <!--头部  -->
+  <template is="essayHeaderTemplate" data="{{...essay}}"/>
+
+  <!--内容  -->
+  <view class='padding-t-10 font-4d'>
+     <template is="nodesTemplate" data="{{nodes}}"/>
+  </view>
+   <!--结尾  -->
+  <template is="essayFooterTemplate" data="{{...essay}}"/>
+</view>
+
+<!--评论  -->
+<view class='bg-white'>
+  <template is="commentsTemplate" data="{{list}}"/>
+</view>
+ <zan-loading type="spinner" color="black" wx:if="{{ bottomLoading }}" size="20"></zan-loading>
+ <template is="hasNoMoreTemplate" data="{{hasMore, list}}"/>
+
+<!--页面底部  -->
+<view style='height:120rpx;'></view>
+<!--页面底部  -->
+<view style='height:120rpx;'></view>
+<template is="submitCommentTemplate" data="{{ comment }}"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

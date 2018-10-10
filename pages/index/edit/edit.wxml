@@ -1,0 +1,43 @@
+<import src="editTemplate.wxml"/>
+
+<view  class='padding-h-10 font-24'  wx:if="{{ !isPreview }}">
+  <view class='bottom-line  padding-b-10'>
+    <input placeholder='标题(选填-20字以内)' maxlength="20" bindblur="setTitle"></input>
+  </view>
+  <!--编辑  -->
+  <view class="bg-white  padding-t-10">
+    <block wx:for="{{ nodes }}" wx:key="{{ index }}">
+    <textarea 
+      style='width:100%;' 
+      auto-height placeholder='' 
+      placeholder='{{index == 0 ? "请输入内容！":"可输入行"}}'
+      maxlength="500" name="content"
+      wx:if="{{ item.type == 'view' }}" 
+      data-index="{{ index }}"
+      bindinput="oninput" 
+      bindfocus="onfocus"
+      bindlinechange='onlinechange'></textarea>
+      <view class='position-r margin-t-10' wx:if="{{ item.type == 'img' }}" style='width:50%'>
+        <text class='iconfont icon-removecircle position-a font-ccc'  data-index="{{index}}" bindtap='deletePic' style='font-size:50rpx;top:-26rpx;right:-26rpx;'></text>
+        <image style='width:100%' src='{{ item.value }}'  mode='widthFix'></image>
+      </view>
+      
+    </block>
+  </view>
+</view>
+
+<!--预览  -->
+<view wx:else>
+  <template is=nodesTemplate" data="{{nodes}}"/>
+</view>
+
+<view style='height:90rpx'></view>
+<view class='bg-white border-top-seg display-flex-center-between font-666' style='padding:4rpx 20rpx; position:fixed; bottom:0;width:100%'>
+  <text class='iconfont icon-tupian' style='font-size:60rpx;' bindtap='uploadImg'></text>
+  <view class='display-flex-center-between'>
+    <text wx:if="{{ !isPreview }}" class='font-theme margin-r-10' bindtap='topreview' style='font-size:30rpx;'>预览</text>
+    <text wx:if="{{ isPreview }}" class='font-theme margin-r-10' bindtap='topreview' style='font-size:30rpx;'>编辑</text>
+    <text class='font-theme margin-l-10' bindtap='torelease' style='font-size:30rpx;'>发布</text>
+  </view>
+</view>
+

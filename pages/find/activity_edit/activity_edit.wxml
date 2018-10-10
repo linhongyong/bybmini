@@ -1,0 +1,27 @@
+<import src="../../../wxml/essay_edit_footer_tpl.wxml"/> 
+<zan-toast id="zan-toast"></zan-toast>
+
+<form bindsubmit="formSubmit" >
+
+<!--编辑区  -->
+<view  class='padding-h-10 font-24'  wx:if="{{ !isPreview }}">
+  <!--表单部分  -->
+  <view class='bottom-line display-flex-center-between' style='padding-top:30rpx;padding-bottom:5px'>
+    <text class='flex-3'>标题</text>
+    <input class='flex-7' placeholder='标题' maxlength="100" name="title"></input>
+  </view>
+  <!--时间 地点 事件  -->
+  <!--图文部分  -->
+  <ng-edit id="ng-edit"></ng-edit>
+</view>
+
+<!--预览区  -->
+<view wx:else>
+  <template is="nodesTemplate" data="{{nodes}}"/>
+</view>
+
+<!--底部输入bar  -->
+<template is=essayEditFooterTemplate"/>
+
+
+</form>

@@ -6,7 +6,19 @@ Page({
   data: {
   },
   onLoad: function (options) {
+    // util.getDataByAjax({
+    //   url: '/api/essay/essay',
+    //   method: "Get",
+    //   data: {
+    //     id: options.id
+    //   },
+    //   success: function (data) {
 
+    //   },
+    //   error: function (error) {
+    //     console.log(error);
+    //   },
+    // });
   },
   onShow: function () {
 

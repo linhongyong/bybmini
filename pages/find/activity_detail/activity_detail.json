@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "zan-toast": "../../../components/toast/index",
+    "zan-loading": "../../../components/loading/index"
+  }
+}

@@ -1,0 +1,42 @@
+.tab-column{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; 
+  box-sizing: border-box; 
+  background-color: #fff; 
+}
+.tab-column text{
+  flex: 1;
+  text-align: center;
+  padding: 20rpx 0;
+}
+.swiper-title--active{
+  color: #00A1BA;
+  position: relative;
+}
+.swiper-title--active::after{
+  color: #00A1BA;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: ' ';
+  height: 5rpx;
+  background-color: #00A1BA; 
+  width: 100%;
+}
+
+/*分类*/
+.menus1  .menu-item,.menus .menu-item{
+  width: 110rpx;
+  height: 110rpx;
+  margin: 0 auto;
+  padding: 20rpx;
+  border: 1px solid #ccc;
+  border-radius: 55rpx;
+  margin-bottom: 10rpx;
+  text-align: center;
+}
+.menus1 .menu-item{
+  box-shadow: #ddd 0rpx 0rpx 30rpx 4rpx;
+}

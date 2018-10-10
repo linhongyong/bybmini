@@ -1,0 +1,22 @@
+<view class='menus'>
+  <view class='ng-fl'>
+    <view class='ng-fl-l' wx:for="{{ list }}" wx:key="{{index}}" style='width:187rpx; margin-top:60rpx;'>
+      <navigator url='{{ item.url }}' hover-class='none'>
+        <view class='menu-item'>
+          <image class='ng-fill' src='{{ item.img }}' mode=''></image>
+        </view>
+        <view class='margin-t-5 font-14 text-c'>{{ item.name }}</view>
+      </navigator>
+    </view>
+  </view>
+  <view class='ng-fl margin-t-20'>
+    <view class='ng-fl-l' wx:for="{{ list2 }}" wx:key="{{index}}" style='width:187rpx; margin-top:60rpx;'>
+      <navigator url='{{ item.url }}' hover-class='none'>
+        <view class='menu-item'>
+          <image class='ng-fill' src='{{ item.img }}' mode=''></image>
+        </view>
+        <view class='margin-t-5 font-14 text-c'>{{ item.name }}</view>
+      </navigator>
+    </view>
+  </view>
+</view>

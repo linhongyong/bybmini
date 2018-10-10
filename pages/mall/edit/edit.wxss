@@ -1,0 +1,9 @@
+page{
+  background-color: white;
+}
+view{
+   font-size: 30rpx;
+}
+input{
+  text-align: right;
+}

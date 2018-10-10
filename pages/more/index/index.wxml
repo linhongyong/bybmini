@@ -1,0 +1,74 @@
+<view class='tab-column top-line' style='height:40px'>
+  <text class="{{ curNav == 0 ? 'swiper-title--active' : '' }}" data-curnav="0" bindtap="switchTopTab">最新</text>
+  <text class="{{ curNav == 1 ? 'swiper-title--active' : '' }}" data-curnav="1" bindtap="switchTopTab">全部</text>
+</view>
+<swiper bindchange="watchChange" current="{{curNav}}" style='height:500px'>
+  <!--  -->
+  <swiper-item>
+    <scroll-view scroll-y style='height:100%'>
+      胜多负少
+
+
+    </scroll-view>
+  </swiper-item>
+
+
+  <!---------------------------------------  ------------------------------------  -->
+  <swiper-item>
+    <scroll-view scroll-y style='height:100%'>
+
+      <!--  -->
+      <view class='padding-h-20 padding-t-10 font-18 bg-white font-bold'>兼职推荐</view>
+      <view class='scroll_box bg-white'>
+        <scroll-view scroll-x style="" bindscroll="scroll">
+          <view class='menus display-ib padding-10-20' wx:for="{{categorys}}" wx:key="{{index}}">
+            <view class='menu-item'>
+              <image class='ng-fill' src='{{ item.img }}' mode=''></image>
+            </view>
+            <view class='font-13'>{{ item.name }}</view>
+          </view>
+        </scroll-view>
+      </view>
+
+      <!--  -->
+      <view class='padding-h-20 padding-t-10 font-18 bg-white font-bold'>坚持打卡</view>
+      <view class='scroll_box bg-white'>
+        <scroll-view scroll-x style="" bindscroll="scroll">
+          <view class='menus display-ib padding-10-20' wx:for="{{categorys}}" wx:key="{{index}}">
+            <view class='menu-item'>
+              <image class='ng-fill' src='{{ item.img }}' mode=''></image>
+            </view>
+            <view class='font-13'>{{ item.name }}</view>
+          </view>
+        </scroll-view>
+      </view>
+
+      <!--  -->
+      <view class='padding-h-20 padding-t-10 font-18 bg-white font-bold'>建队合伙</view>
+      <view class='scroll_box bg-white'>
+        <scroll-view scroll-x style="" bindscroll="scroll">
+          <view class='menus display-ib padding-10-20' wx:for="{{categorys}}" wx:key="{{index}}">
+            <view class='menu-item'>
+              <image class='ng-fill' src='{{ item.img }}' mode=''></image>
+            </view>
+            <view class='font-13'>{{ item.name }}</view>
+          </view>
+        </scroll-view>
+      </view>
+      <!--  -->
+      <view class='padding-h-20 padding-t-10 font-18 bg-white font-bold'>技能</view>
+      <view class='scroll_box bg-white'>
+        <scroll-view scroll-x style="" bindscroll="scroll">
+          <view class='menus display-ib padding-10-20' wx:for="{{categorys}}" wx:key="{{index}}">
+            <view class='menu-item'>
+              <image class='ng-fill' src='{{ item.img }}' mode=''></image>
+            </view>
+            <view class='font-13'>{{ item.name }}</view>
+          </view>
+        </scroll-view>
+      </view>
+
+    </scroll-view>
+  </swiper-item>
+
+</swiper>

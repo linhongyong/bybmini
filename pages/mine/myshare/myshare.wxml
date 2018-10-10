@@ -1,0 +1,3 @@
+<view class='padding-h-10 bg-white top-line'>
+  <!-- <template is="lifeListTemplate" data="{{list}}"/> -->
+</view>

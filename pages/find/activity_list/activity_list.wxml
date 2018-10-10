@@ -1,0 +1,10 @@
+
+<import src="../../../wxml/essayList_life_tpl.wxml" />
+<import src="../../../wxml/noMore_tpl.wxml" />
+
+<view class='padding-h-10 bg-white top-line'>
+   <template is="lifeListTemplate" data="{{list}}"/>
+</view>
+
+ <zan-loading type="spinner" color="black" wx:if="{{ bottomLoading }}" size="20"></zan-loading>
+ <template is="hasNoMoreTemplate" data="{{hasMore, list}}"/>

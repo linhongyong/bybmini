@@ -1,4 +1,42 @@
-<view class="padding-15-20 bg-white border-top-seg">
-  <view></view>
-  <view>我的买卖</view>
+<view class='bg'></view>
+<view class='headdiv'>
+  <view class='text-c headpic-name'>
+    <view class='portrait' style='margin: 0 auto'>
+    <image class='' mode="" src="{{ !!headpic ? headpic : '' }}" style=''></image>
+    </view>
+    <view class='margin-t-10'>{{nickname}}</view>
+  </view>
+</view> 
+
+<view class='menus ng-fl bg-white border-top-seg'>
+  <view class='ng-fl-l' wx:for="{{ list }}" style='width:150rpx; margin-top:60rpx;'>
+    <navigator url='{{ item.url }}' hover-class='none'>
+      <view class='menu-item'>
+        <image class='ng-fill' src='{{ item.img }}' mode=''></image>
+      </view>
+      <view class='margin-t-5 font-14 text-c'>{{ item.name }}</view>
+    </navigator>
+  </view>
 </view>
+
+<!-- <view class='padding-10 bg-white font-24'>
+  <view class='display-flex-center padding-b-10'>
+    <image class='margin-r-10' src='{{ jokeArray[activeJokeIndex].avatar_url }}' mode='' style='width:50rpx;height:50rpx'></image>
+    <text class='margin-r-10'>温大</text><text class='margin-r-10'>计算机</text><text> 林*勇</text> 
+    <text class='margin-r-10'>{{ jokeArray[activeJokeIndex].nick_name }}</text>
+  </view>
+  <scroll-view scroll-y style="height: 180px;">
+    <view class='text-indent'>{{ jokeArray[activeJokeIndex].content }}</view>
+  </scroll-view>
+  <view class='ng-fl padding-t-10'>
+    <view class='margin-r-10 ng-fl-l' bindtap='jokeAction' data-type='zan' data-id="{{ jokeArray[activeJokeIndex].id }}">
+      <text class='iconfont icon-good margin-r-10'></text>{{ jokeArray[activeJokeIndex].zan }}
+    </view>
+    <view class='margin-r-10 ng-fl-l' bindtap='jokeAction' data-type='cai' data-id="{{ jokeArray[activeJokeIndex].id }}">
+      <text class='iconfont icon-tubiao_diancai margin-r-10'></text>{{ jokeArray[activeJokeIndex].cai }}
+    </view>
+    <view class='ng-fl-r'>
+      <text class='iconfont icon-view-num margin-r-10'></text>{{ jokeArray[activeJokeIndex].view }}</view>
+  </view>
+</view>
+<view style='height:300px'></view> -->

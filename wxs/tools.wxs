@@ -1,0 +1,8 @@
+var str2Array = function (str) {
+  var array = JSON.parse(str);
+  return array;
+}
+
+module.exports = {
+  str2Array: str2Array
+};
